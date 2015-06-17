@@ -11,12 +11,12 @@ INSERT INTO authors VALUES
   (2,"Author2");
 
 INSERT INTO books VALUES
-  (1,"Book1",1990,"Subgenre1"),
-  (2,"Book2",1991,"Subgenre1"),
-  (3,"Book3",1992,"Subgenre2"),
-  (4,"Book4",1993,"Subgenre2"), 
-  (5,"Book5",1994,"Subgenre1"),
-  (6,"Book6",1995,"Subgenre1");
+  (1,"Book1",1990,"series1"),
+  (2,"Book2",1991,"series1"),
+  (3,"Book3",1992,"series2"),
+  (4,"Book4",1993,"series2"), 
+  (5,"Book5",1994,"series1"),
+  (6,"Book6",1995,"series1");
 
 INSERT INTO characters VALUES
   (1,"character1","motto1","species1","Author1","series_id"),
