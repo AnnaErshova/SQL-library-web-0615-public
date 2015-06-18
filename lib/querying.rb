@@ -42,20 +42,20 @@ def select_series_title_with_most_human_characters
       ON series.id = characters.series_id
         WHERE species = 'human'
           GROUP BY series.title 
-            ORDER BY count(characters.species) DESC 
+            ORDER BY count(*) DESC 
               LIMIT 1;"
 end
 # join: series <=> characters; series.id == characters.series_id; 
 # need to organize human species by count by series and return appropriate series limited by top choice
 
 def select_character_names_and_number_of_books_they_are_in
-  "SELECT name, COUNT(title) 
+  "SELECT characters.name, COUNT(*) 
     FROM character_books INNER JOIN characters
       ON character_books.character_id = characters.id
         INNER JOIN books
           ON character_books.book_id = books.id
-            GROUP BY name
-              ORDER BY COUNT(title) DESC;" 
+            GROUP BY characters.name
+              ORDER BY COUNT(*) DESC;" 
 end
 # characters.id <== character_books.character_id; character_books.book_id ==> books.id
 # rspec is looking for the list organized by number of books in descending order
