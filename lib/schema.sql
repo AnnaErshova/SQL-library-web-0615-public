@@ -1,8 +1,8 @@
 CREATE TABLE series (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   title TEXT,
-  author_id TEXT,
-  subgenre_id TEXT
+  author_id INTEGER,
+  subgenre_id INTEGER
 );
 
 CREATE TABLE subgenres(
@@ -18,8 +18,8 @@ CREATE TABLE authors (
 CREATE TABLE books (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   title TEXT,
-  year INTEGER,
-  series_id TEXT
+  year DATE,
+  series_id INTEGER
 );
 
 CREATE TABLE characters (
@@ -27,13 +27,12 @@ CREATE TABLE characters (
   name TEXT, 
   motto TEXT, 
   species TEXT, 
-  author_id TEXT,
-  series_id TEXT
+  author_id INTEGER,
+  series_id INTEGER
 );
 
 CREATE TABLE character_books (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  book_id TEXT,
-  character_id TEXT
+  book_id INTEGER,
+  character_id INTEGER
 );
-
